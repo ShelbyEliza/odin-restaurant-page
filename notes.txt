@@ -1,0 +1,4 @@
+const navState = document.createElement("button");
+navState.textContent = "navStatus";
+navState.addEventListener("click", () => console.log(navStatus));
+contentDiv.appendChild(navState);

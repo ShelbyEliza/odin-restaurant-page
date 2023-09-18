@@ -25,7 +25,6 @@ export default function home(imgPath, data) {
 	homeWrapper.appendChild(homeImg);
 	homeWrapper.appendChild(headline);
 	homeWrapper.appendChild(aboutDiv);
-	console.log("hey");
 
 	return homeWrapper;
 }
