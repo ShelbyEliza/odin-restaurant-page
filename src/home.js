@@ -7,6 +7,7 @@ export default function buildHome() {
 
 	titleDiv.appendChild(title);
 	titleDiv.appendChild(subtitle);
+	console.log("newer change");
 
 	return titleDiv;
 	// return "I'm the Homepage!";

@@ -10,4 +10,4 @@ contentDiv.appendChild(buildHome());
 // 	return contentDiv;
 // }
 
-document.body.appendChild(component());
+document.body.appendChild(contentDiv);

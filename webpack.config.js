@@ -5,7 +5,7 @@ module.exports = {
 	mode: "development",
 	entry: {
 		index: "./src/index.js",
-		print: "./src/print.js",
+		home: "./src/home.js",
 	},
 	// shows which files errors originate from:
 	devtool: "inline-source-map",
