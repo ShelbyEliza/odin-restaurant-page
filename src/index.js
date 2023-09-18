@@ -1,13 +1,16 @@
-import buildHome from "./home";
-
-const contentDiv = document.createElement("div");
-// const cDiv = document.getElementById("content");
-contentDiv.appendChild(buildHome());
+import home from "./home";
+import "./style.css";
+import Pancakes from "./pancakes.jpg";
+import Data from "./data.json";
 
 // function component() {
-// 	// contentDiv.classList.add("content-wrapper");
-// 	// contentDiv.textContent = buildHome();
-// 	return contentDiv;
+const contentDiv = document.getElementById("content");
+
+// const myPancakes = new Image();
+// myPancakes.src = Pancakes;
+
+contentDiv.appendChild(home(Pancakes, Data));
+// contentDiv.appendChild(myPancakes);
 // }
 
-document.body.appendChild(contentDiv);
+console.log("index.js!");

@@ -1,4 +1,5 @@
 const path = require("path");
+// html-webpack-plugin: allows dynamic entry points
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -7,23 +8,33 @@ module.exports = {
 		index: "./src/index.js",
 		home: "./src/home.js",
 	},
-	// shows which files errors originate from:
 	devtool: "inline-source-map",
+	// used with start command - runs on localhost:8080
 	devServer: {
 		static: "./dist",
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: "Development",
+			title: "Restaurant Page",
+			template: "template.html",
 		}),
 	],
 	output: {
 		filename: "[name].bundle.js",
 		path: path.resolve(__dirname, "dist"),
-		// remove unused files after every build:
 		clean: true,
-		// needed for webpack-dev-middleware:
-		publicPath: "/",
+	},
+	module: {
+		rules: [
+			{
+				test: /\.css$/i,
+				use: ["style-loader", "css-loader"],
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: "asset/resource",
+			},
+		],
 	},
 	optimization: {
 		runtimeChunk: "single",
