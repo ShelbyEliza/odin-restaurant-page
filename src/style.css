@@ -1,11 +1,61 @@
+@font-face {
+	font-family: "work-sans";
+	src: url("./work-sans-medium.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+
+html,
 body {
-	background: purple;
+	min-height: 100%;
+	margin: 0 auto;
+
+	font-size: 16px;
+	font-family: "work-sans";
+	/* font-family: "Hind Madurai", sans-serif, -apple-system, BlinkMacSystemFont,
+		"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+		sans-serif; */
+}
+body {
+	background: rgb(150, 69, 150);
+}
+button,
+input {
+	width: 200px;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	font-family: inherit;
+	font-size: 100%;
+}
+button {
+	box-shadow: none;
+	border: none;
+}
+button:hover {
+	cursor: pointer;
 }
 nav {
 	display: flex;
 	justify-content: space-between;
 }
+.home-wrapper {
+	border: 1px solid darkblue;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
 img {
 	width: 70vw;
 	height: auto;
+}
+.about {
+	max-width: 45ch;
+	text-indent: 2ch;
+	text-align: start;
+}
+.about::first-line {
+	color: blue;
 }

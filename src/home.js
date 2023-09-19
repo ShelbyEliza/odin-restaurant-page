@@ -11,6 +11,7 @@ export default function home(imgPath, data) {
 	homeImg.src = imgPath;
 	homeImg.alt = "pancakes and raspberries";
 
+	homeWrapper.classList.add("home-wrapper");
 	headline.classList.add("headline");
 	aboutP1.classList.add("about");
 	aboutP2.classList.add("about");
