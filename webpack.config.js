@@ -3,10 +3,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-	mode: "development",
+	mode: "production",
 	entry: {
 		index: "./src/index.js",
-		home: "./src/modules/home.js",
 	},
 	devtool: "inline-source-map",
 	// used with start command - runs on localhost:8080
@@ -39,8 +38,5 @@ module.exports = {
 				type: "asset/resource",
 			},
 		],
-	},
-	optimization: {
-		runtimeChunk: "single",
 	},
 };
