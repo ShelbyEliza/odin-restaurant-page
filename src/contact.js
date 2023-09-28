@@ -3,18 +3,26 @@ import Coffee from "./coffee-crop.png";
 export default function contact(data) {
 	const contactWrapper = document.createElement("div");
 	const headline = document.createElement("h2");
-	const infoDiv = document.createElement("div");
+	const contactContent = document.createElement("div");
 
 	const coffeeImg = new Image();
 	coffeeImg.src = Coffee;
 	coffeeImg.alt = "woman drinking coffee";
+
+	const blurb = document.createElement("p");
+	blurb.classList.add("blurb");
+	blurb.textContent = data.contact.blurb;
+	const imgBlurbDiv = document.createElement("div");
+	imgBlurbDiv.classList.add("img-blurb-div");
+
+	const labelDiv = document.createElement("div");
+	const infoDiv = document.createElement("div");
 
 	const phone = document.createElement("p");
 	const site = document.createElement("p");
 	const addressL1 = document.createElement("p");
 	const addressL2 = document.createElement("p");
 	const addressL3 = document.createElement("p");
-
 	const email = document.createElement("p");
 
 	const phoneLabel = document.createElement("p");
@@ -24,7 +32,11 @@ export default function contact(data) {
 
 	contactWrapper.id = "contact-page";
 
-	infoDiv.classList.add("contact-info");
+	coffeeImg.classList.add("contact-img");
+	contactContent.classList.add("contact-content");
+
+	labelDiv.classList.add("labels");
+	infoDiv.classList.add("info");
 
 	phoneLabel.classList.add("label");
 	siteLabel.classList.add("label");
@@ -33,9 +45,9 @@ export default function contact(data) {
 
 	phone.classList.add("data");
 	site.classList.add("data");
-	addressL1.classList.add("data");
-	addressL2.classList.add("data");
-	addressL3.classList.add("data");
+	addressL1.classList.add("data", "address");
+	addressL2.classList.add("data", "address");
+	addressL3.classList.add("data", "address");
 	email.classList.add("data");
 
 	headline.textContent = "Contact Us!";
@@ -46,8 +58,15 @@ export default function contact(data) {
 	addressL3.textContent = data.contact.addressL3;
 	email.textContent = data.contact.email;
 
-	let infoItems = [phone, site, addressL1, addressL2, addressL3, email];
-	let pageItems = [headline, coffeeImg, infoDiv];
+	phoneLabel.textContent = "Phone Number";
+	siteLabel.textContent = "Website";
+	addressLabel.textContent = "Address";
+	emailLabel.textContent = "Email";
+
+	let labelItems = [phoneLabel, siteLabel, emailLabel, addressLabel];
+	let infoItems = [phone, site, email, addressL1, addressL2, addressL3];
+	let imgBlurbItems = [coffeeImg, blurb];
+	let pageItems = [headline, imgBlurbDiv, contactContent];
 
 	function appendItems(parent, children) {
 		children.forEach((child) => {
@@ -55,7 +74,13 @@ export default function contact(data) {
 		});
 	}
 
+	appendItems(labelDiv, labelItems);
 	appendItems(infoDiv, infoItems);
+	appendItems(imgBlurbDiv, imgBlurbItems);
+
+	contactContent.appendChild(labelDiv);
+	contactContent.appendChild(infoDiv);
+
 	appendItems(contactWrapper, pageItems);
 
 	return contactWrapper;

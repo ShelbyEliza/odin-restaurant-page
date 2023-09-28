@@ -7,6 +7,14 @@
 // 		});
 // 	}
 // }
+const mainTitleDiv = document.createElement("div");
+mainTitleDiv.classList.add("main-title-wrapper");
+
+const mainTitle = document.createElement("h1");
+mainTitle.classList.add("site-title");
+mainTitle.textContent = "Brunchoes Munchoes";
+
+mainTitleDiv.appendChild(mainTitle);
 
 class Tab {
 	constructor(title) {
@@ -17,7 +25,10 @@ class Tab {
 		this.btn.classList.add(`${title}Tab`);
 		this.btn.textContent = title;
 
-		if (this.title === "Home") {
+		/** TODO: this.title === "Home". Other options are for dev. */
+		// if (this.title === "Home") {
+		// if (this.title === "Contact") {
+		if (this.title === "Menu") {
 			this.btn.classList.add("active");
 			this.status = true;
 		} else {
@@ -49,11 +60,16 @@ const homeTab = new Tab("Home");
 const menuTab = new Tab("Menu");
 const contactTab = new Tab("Contact");
 // const myTabs = new Tabs([homeTab, menuTab, contactTab]);
-let prevTab = homeTab;
+
+/** TODO: set prevTab to hometab. Other options are for dev. */
+// let prevTab = homeTab;
+let prevTab = menuTab;
+// let prevTab = contactTab;
 
 const nav = document.createElement("nav");
+// nav.appendChild(mainTitleDiv);
 
 nav.appendChild(homeTab.btn);
 nav.appendChild(menuTab.btn);
 nav.appendChild(contactTab.btn);
-export { nav, homeTab, menuTab, contactTab };
+export { nav, mainTitleDiv, homeTab, menuTab, contactTab };

@@ -2,3 +2,185 @@ const navState = document.createElement("button");
 navState.textContent = "navStatus";
 navState.addEventListener("click", () => console.log(navStatus));
 contentDiv.appendChild(navState);
+
+.about-wrapper {
+	/* background: linear-gradient(
+		0.25turn,
+		var(--trans-pink-pleasure),
+		2%,
+		var(--pink-pleasure),
+		 95%,
+		var(--trans-pink-pleasure)
+	); */
+	/* background: linear-gradient(
+		0.25turn,
+		#c0929800,
+		10%,
+		#c09298,
+		90%,
+		#c0929800
+	); */
+	background: linear-gradient(
+		0.25turn,
+		#ffffff00,
+		10%,
+		#c09298,
+		90%,
+		#c0929800
+	);
+
+  @import url("https://fonts.googleapis.com/css2?family=Artifika&family=Cabin+Sketch:wght@400;700&display=swap");
+
+@font-face {
+	font-family: "work-sans";
+	src: url("./work-sans-medium.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+
+:root {
+	--pink-pleasure: #ffdee2;
+	--trans-pink-pleasure: #ffdee200;
+	--instant-noodles: #f8d593;
+	--heron: #605c87;
+	--flying-carpet: #7a7487;
+	--earth-bound: #a58b8a;
+	--molasses: #56494a;
+	--smoking-mirror: #a39389;
+	--moonless-night: #303030;
+	--diamond-cut: #e9e9ed;
+}
+
+html,
+body {
+	min-height: 100%;
+	margin: 0 auto;
+
+	font-size: 16px;
+	font-family: "work-sans";
+	font-family: "Artifika", serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	color: white;
+}
+body {
+	background: content-box url("./floral-pattern-pink.png");
+	background-size: contain;
+}
+h2 {
+	text-align: left;
+	/* color: var(--heron); */
+	color: rgb(233, 233, 233);
+	background-color: var(--earth-bound);
+	width: 100%;
+
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 0rem;
+	margin-top: 0rem;
+	padding-left: 40%;
+
+	/* border-bottom: 1px solid var(--molasses); */
+
+	font-family: "Artifika", serif;
+}
+button {
+	width: 10rem;
+	height: 5rem;
+	margin: 0;
+	box-sizing: border-box;
+	border-radius: 100%;
+	border: 2px solid var(--diamond-cut);
+	box-shadow: none;
+	background-color: var(--trans-pink-pleasure);
+
+	font-size: 2.4rem;
+	font-family: "Cabin Sketch", cursive;
+
+	color: white;
+}
+button:hover {
+	cursor: pointer;
+	background-color: var(--heron);
+	border-color: var(--instant-noodles);
+	color: var(--instant-noodles);
+}
+nav {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 0.7rem;
+	border-bottom: 8px solid var(--earth-bound);
+	background-color: var(--flying-carpet);
+}
+.home-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+img {
+	float: left;
+	width: 40vw;
+	height: auto;
+	margin: 1rem;
+	/* margin-right: 1rem;
+	margin-bottom: 1rem; */
+	border-radius: 1.4rem;
+	border: 2px solid var(--earth-bound);
+}
+.about-wrapper {
+	background: linear-gradient(
+		0.25turn,
+		#ffffff00,
+		10%,
+		#c09298,
+		90%,
+		#c0929800
+	);
+
+	width: 100%;
+	padding: 0.4rem 2rem;
+	padding-top: 0rem;
+	/* border: 1px solid rebeccapurple; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.about {
+	padding: 1rem 1rem;
+	border-radius: 2%;
+	width: 100%;
+
+	max-width: 45ch;
+	/* text-indent: 2ch; */
+	text-align: start;
+	/* color: var(--heron); */
+	color: rgb(233, 233, 233);
+
+	overflow-wrap: break-word;
+	/* border: 1px solid green; */
+
+	/* background-color: #ff7b8a; */
+}
+.about-content {
+	/* display: grid;
+	grid-template-columns: minmax(20%, 1fr) 1fr;
+	margin: 1rem 4rem; */
+	/* grid-template-rows: 1fr auto; */
+	/* display: flex;
+	flex-flow: row wrap;
+	justify-content: center; */
+}
+.about-content p:first-of-type {
+	grid-column: 2 / 3;
+	margin-top: 0rem;
+}
+.active {
+	background-color: var(--instant-noodles);
+}
+/* .about::first-line {
+	color: blue;
+} */
+.contact-info {
+	background-color: #ff7b8a;
+}
