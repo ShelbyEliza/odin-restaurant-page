@@ -1,8 +1,7 @@
-import Coffee from "./coffee-crop.png";
+import Coffee from "../images/coffee-crop.png";
 
 export default function contact(data) {
 	const contactWrapper = document.createElement("div");
-	const headline = document.createElement("h2");
 	const contactContent = document.createElement("div");
 
 	const coffeeImg = new Image();
@@ -50,7 +49,6 @@ export default function contact(data) {
 	addressL3.classList.add("data", "address");
 	email.classList.add("data");
 
-	headline.textContent = "Contact Us!";
 	phone.textContent = data.contact.phone;
 	site.textContent = data.contact.site;
 	addressL1.textContent = data.contact.addressL1;
@@ -65,8 +63,7 @@ export default function contact(data) {
 
 	let labelItems = [phoneLabel, siteLabel, emailLabel, addressLabel];
 	let infoItems = [phone, site, email, addressL1, addressL2, addressL3];
-	let imgBlurbItems = [coffeeImg, blurb];
-	let pageItems = [headline, imgBlurbDiv, contactContent];
+	let pageItems = [coffeeImg, blurb, contactContent];
 
 	function appendItems(parent, children) {
 		children.forEach((child) => {
@@ -76,7 +73,6 @@ export default function contact(data) {
 
 	appendItems(labelDiv, labelItems);
 	appendItems(infoDiv, infoItems);
-	appendItems(imgBlurbDiv, imgBlurbItems);
 
 	contactContent.appendChild(labelDiv);
 	contactContent.appendChild(infoDiv);

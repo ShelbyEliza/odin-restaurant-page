@@ -1,6 +1,5 @@
 export default function menu(data) {
 	const menuWrapper = document.createElement("div");
-	const headline = document.createElement("h2");
 	const menuContent = document.createElement("div");
 
 	const appsHeading = document.createElement("h3");
@@ -57,7 +56,6 @@ export default function menu(data) {
 
 	menuWrapper.id = "menu-page";
 
-	headline.textContent = "Menu";
 	appsHeading.textContent = "Appetizers";
 	mainsHeading.textContent = "Mains";
 	sweetsHeading.textContent = "Sweets";
@@ -74,7 +72,6 @@ export default function menu(data) {
 	menuContent.appendChild(mainsDiv);
 	menuContent.appendChild(sweetsDiv);
 
-	menuWrapper.appendChild(headline);
 	menuWrapper.appendChild(menuContent);
 
 	return menuWrapper;

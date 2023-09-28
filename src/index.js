@@ -1,27 +1,23 @@
 import "./style.css";
-import { nav, mainTitleDiv, homeTab, menuTab, contactTab } from "./nav";
-import home from "./home";
-import contact from "./contact";
-import menu from "./menu";
+import { nav, mainTitleDiv, homeTab, menuTab, contactTab } from "./modules/nav";
+import home from "./modules/home";
+import contact from "./modules/contact";
+import menu from "./modules/menu";
 
 import Data from "./data.json";
 
-const contentDiv = document.getElementById("content");
-const headerEl = document.createElement("header");
-/** TODO: set prevTab to "home". Other options are for dev. */
-// let prevTab = "home";
-let prevTab = "menu";
-// let prevTab = "contact";
+const fullPageDiv = document.getElementById("content");
+const tabContentDiv = document.createElement("div");
+tabContentDiv.id = "tab-content";
 
-document.body.insertBefore(headerEl, document.body.firstChild);
-headerEl.appendChild(nav);
+fullPageDiv.appendChild(mainTitleDiv);
+fullPageDiv.appendChild(nav);
+fullPageDiv.appendChild(tabContentDiv);
 
-/** TODO: set contentDiv.appendChild(home(Data)). Other options are for dev. */
-// contentDiv.appendChild(home(Data));
-contentDiv.appendChild(menu(Data));
-// contentDiv.appendChild(contact(Data));
+tabContentDiv.appendChild(home(Data));
 
 /** Add event listeners to Nav: */
+let prevTab = "home";
 homeTab.btn.addEventListener("click", () => {
 	controlNav("home", home(Data));
 });
@@ -34,10 +30,10 @@ menuTab.btn.addEventListener("click", () => {
 
 function controlNav(newTab, module) {
 	if (newTab !== prevTab) {
-		while (contentDiv.firstChild) {
-			contentDiv.removeChild(contentDiv.firstChild);
+		while (tabContentDiv.firstChild) {
+			tabContentDiv.removeChild(tabContentDiv.firstChild);
 		}
-		contentDiv.appendChild(module);
+		tabContentDiv.appendChild(module);
 		prevTab = newTab;
 	}
 }

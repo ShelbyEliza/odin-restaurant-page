@@ -6,7 +6,7 @@ module.exports = {
 	mode: "development",
 	entry: {
 		index: "./src/index.js",
-		home: "./src/home.js",
+		home: "./src/modules/home.js",
 	},
 	devtool: "inline-source-map",
 	// used with start command - runs on localhost:8080

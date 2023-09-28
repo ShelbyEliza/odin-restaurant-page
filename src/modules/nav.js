@@ -1,12 +1,3 @@
-// class Tabs {
-// 	allTabs = [];
-
-// 	constructor(tabList) {
-// 		tabList.forEach((tab) => {
-// 			this.allTabs.push(tab);
-// 		});
-// 	}
-// }
 const mainTitleDiv = document.createElement("div");
 mainTitleDiv.classList.add("main-title-wrapper");
 
@@ -25,10 +16,7 @@ class Tab {
 		this.btn.classList.add(`${title}Tab`);
 		this.btn.textContent = title;
 
-		/** TODO: this.title === "Home". Other options are for dev. */
-		// if (this.title === "Home") {
-		// if (this.title === "Contact") {
-		if (this.title === "Menu") {
+		if (this.title === "Home") {
 			this.btn.classList.add("active");
 			this.status = true;
 		} else {
@@ -59,15 +47,10 @@ class Tab {
 const homeTab = new Tab("Home");
 const menuTab = new Tab("Menu");
 const contactTab = new Tab("Contact");
-// const myTabs = new Tabs([homeTab, menuTab, contactTab]);
 
-/** TODO: set prevTab to hometab. Other options are for dev. */
-// let prevTab = homeTab;
-let prevTab = menuTab;
-// let prevTab = contactTab;
+let prevTab = homeTab;
 
 const nav = document.createElement("nav");
-// nav.appendChild(mainTitleDiv);
 
 nav.appendChild(homeTab.btn);
 nav.appendChild(menuTab.btn);
